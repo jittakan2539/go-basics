@@ -2,6 +2,7 @@ package main
 
 import (
 	"bufio"
+	"fmt"
 	"os"
 )
 
@@ -11,5 +12,10 @@ func main() {
 		panic(err)
 	}
 
-	scanner := bufio.NewScanner()
+	scanner := bufio.NewScanner(file)
+
+	for scanner.Scan() {
+		line := scanner.Text()
+		fmt.Println(line)
+	}
 }
